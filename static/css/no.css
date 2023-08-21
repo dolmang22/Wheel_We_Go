@@ -1,0 +1,55 @@
+body,
+html {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+
+}
+
+div {
+    box-sizing: border-box;
+}
+
+/* #wrap {
+    display: flex;
+    width: 100vw;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    justify-content: center;
+} */
+.back-button {
+    display: inline-block;
+    padding: 1rem;
+    border: none;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.container {
+    display: flex;
+    width: 100vw;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    justify-content: center;
+}
+
+.all {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: fit-content;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 2rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 1.5rem;
+}
+
+p {
+    font-size: 1rem;
+    color: #555;
+}

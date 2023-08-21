@@ -1,0 +1,722 @@
+
+html, body{
+    overflow-x: hidden;
+    padding: 0;
+    margin: 0;
+}
+
+a, a:visited, a:active {
+    color: inherit; /* 상속된 색상 사용 */
+    text-decoration: none; /* 밑줄 제거 */
+}
+
+a:hover {
+    cursor: pointer;
+}
+  
+div {
+    box-sizing: border-box;
+}
+
+.search_gnb{
+    background-color: white;
+    box-shadow: 2px 2px 1rem rgba(0, 0, 0, 0.5);;
+    border-radius: 0 0 1.5rem 1.5rem;
+}
+
+.search_result{
+    position: relative;
+    z-index: 9981;
+
+    width: 100vw;
+    height: 100vh;
+
+    padding-top: 10rem;
+
+    background-color: white;
+    
+}
+
+.search_cur_pos{
+    width: fit-content;
+
+    padding: 0.5rem 1rem;
+    background-color: #FFC573;
+    color: white;
+
+    border-radius: 1rem;
+
+    cursor: pointer;
+}
+.searchBlock{
+    width: 100vw;
+    height: 4rem;
+
+    padding: 1rem;
+
+}
+
+.placeInfo{
+    position: absolute;
+    bottom: 0%; z-index: 1;
+
+    width: 100vw;
+    height: 30vh;
+    padding: 1rem 3rem;
+    
+    border-radius: 1rem 1rem 0 0;
+    
+    background-color: #FFFFFF;
+
+}
+
+.downbar{
+    width: 30%;
+    height: 0.5rem;
+
+    border-radius: 1rem;
+
+    background-color: #ccc;
+
+    margin: 0rem auto;
+}
+
+.placeName{
+    margin: 1.5rem 0;
+
+    font-size: 2rem;
+    font-weight: bold;
+    color: #FFC573;
+}
+
+.naviBtn{
+    position: absolute;
+    bottom: 0;
+
+    width: 100%;
+    padding: 2rem;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.naviBtnItem{
+    width: 40%;
+    padding: 1rem;
+
+    border-radius: 2rem;
+
+    font-size: 1.5rem;
+    font-weight: 600;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.startPointBtn{
+    border: 3px solid #FFC573;
+    color : #FFC573;
+}
+
+.endPointBtn{
+    background-color: #FFC573;
+    color: white;
+}
+
+/*-------------------------------content2-------------------------------*/
+.backgroundBlur{
+    position: fixed;
+    top: 0; left: 0; z-index: 9980;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100vw;
+    height: 100vh;
+    
+    background-color: rgba(0, 0, 0, 0.4);
+}
+/* 데이터 부족할 때(Low Data) */
+.lowData{
+    position: relative;
+    top: 5%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 2rem;
+
+    width: 60%;
+    height: 55%;
+
+    font-size: 2rem;
+    font-weight: bold;
+    color: black;
+
+    background-color: white;
+}
+
+.lowDataContent{
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.lowDataImg{
+    width: 6rem;
+    height: 6rem;
+
+    margin: 1rem 0;
+}
+.lowDataContentTxt{
+    position: relative;
+
+    text-align: center;
+
+    font-size: 1rem;
+    font-weight: normal;
+    color: black;
+}
+.coinImg{
+    width: 2rem;
+    height: 2rem;
+}
+.coin1{
+    padding: 0 0.5rem;
+
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: black;
+}
+.naviDataCautionBtn1{
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    width: 100%;
+    margin-top: 1rem;
+
+    font-size: 1.2rem;
+    font-weight: normal;
+    color: black;
+}
+.naviDataCautionBtn_Start1{
+    position: relative;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 20rem;
+    height: 3.5rem;
+    margin-bottom: 1rem;
+
+    border: 0;
+    border-radius: 1rem;
+
+    background-color: #D9D9D9;
+    cursor: pointer;
+}
+
+.naviDataCautionBtn_Record1{
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 20rem;
+    height: 3.5rem;
+
+    border: 0;
+    border-radius: 1rem;
+
+    background-color: #FFF8EA;
+    cursor: pointer;
+}
+
+/* 데이터 애매할 때(Iffy Data) */
+.iffyData{
+    position: relative;
+    top: 5%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 2rem;
+
+    width: 60%;
+    height: 60%;
+
+    font-size: 2rem;
+    font-weight: bold;
+    color: black;
+
+    background-color: white;
+}
+
+.iffyDataContent{
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.iffyDataImg{
+    width: 6rem;
+    height: 6rem;
+
+    margin: 1rem 0;
+}
+.iffyDataContentTxt{
+    position: relative;
+
+    text-align: center;
+
+    font-size: 1rem;
+    font-weight: normal;
+    color: black;
+}
+.coin2{
+    padding: 0 0.5rem;
+
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: black;
+}
+.naviDataCautionBtn2{
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+
+    width: 100%;
+    margin-top: 1rem;
+
+    font-size: 1.2rem;
+    font-weight: normal;
+    color: black;
+}
+.naviDataCautionBtn_Start2{
+    position: relative;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 20rem;
+    height: 3.5rem;
+
+    border: 0;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+
+    background-color: #D9D9D9;
+    cursor: pointer;
+}
+
+.naviDataCautionBtn_Record2{
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 20rem;
+    height: 3.5rem;
+
+    border: 0;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+
+    background-color: #FFF8EA;
+    cursor: pointer;
+}
+.naviDataCautionBtn_RecordNavi1{
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 20rem;
+    height: 3.5rem;
+
+    border: 0;
+    border-radius: 1rem;
+
+    color: white;
+    background-color: #FFC573;
+    cursor: pointer;
+}
+
+/* 데이터 충분할 때(Enough Data) */
+.enoughData{
+    position: relative;
+    top: 5%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 2rem;
+
+    width: 60%;
+    height: 55%;
+
+    font-size: 2rem;
+    font-weight: bold;
+    color: black;
+
+    background-color: white;
+}
+
+.enoughDataContent{
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.enoughDataImg{
+    width: 6rem;
+    height: 6rem;
+
+    margin: 1rem 0;
+}
+.enoughDataContentTxt{
+    position: relative;
+
+    text-align: center;
+
+    font-size: 1rem;
+    font-weight: normal;
+    color: black;
+}
+.coin3{
+    padding: 0 0.5rem;
+
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: black;
+}
+.naviDataCautionBtn3{
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    font-size: 1.2rem;
+    font-weight: normal;
+    color: black;
+}
+.naviDataCautionBtn_Start3{
+    position: relative;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 20rem;
+    height: 3.5rem;
+
+    border: 0;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+
+    background-color: #D9D9D9;
+    cursor: pointer;
+}
+.naviDataCautionBtn_RecordNavi2{
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 20rem;
+    height: 3.5rem;
+
+    border: 0;
+    border-radius: 1rem;
+
+    color: white;
+    background-color: #FFC573;
+    cursor: pointer;
+}
+
+/*-------------------------------bottombar-------------------------------*/
+.bottomBar{
+    position: fixed;
+    bottom: 0; left: 0; z-index: 9980;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 20%;
+    box-shadow: 2px 2px 1rem rgba(0, 0, 0, 0.5);;
+    border-radius: 1.5rem 1.5rem 0 0;
+    
+    background-color: white;
+}
+.functionInfo{
+    position: relative;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    width: 90%;
+    height: 40%;
+    margin-bottom: 1rem;
+
+    font-size: 0.7rem;
+    color: black;
+}
+.fuctionDataRecord{
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 5rem;
+    height: 5rem;
+}
+.fuctionDataRecordImg{
+    position: relative;
+
+    width: 3rem;
+    height: 3rem;
+    margin-bottom: 0.5rem;
+}
+.functionRoadNavi{
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 5rem;
+    height: 5rem;
+}
+.functionRoadNaviImg{
+    position: relative;
+
+    width: 3rem;
+    height: 3rem;
+    margin-bottom: 0.5rem;
+}
+.funcitonArriveTime{
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 5rem;
+    height: 5rem;
+}
+.funcitonArriveTimeContent{
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    width: 7rem;
+    height: 2rem;
+    margin-bottom: 0.5rem;
+}
+.funcitonArriveTimeImg{
+    position: relative;
+
+    width: 2rem;
+    height: 2rem;
+    margin-bottom: 0.5rem;
+}
+.funcitonArriveTimeValue{
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    width: 2rem;
+    height: 2rem;
+
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.functionGetCoin{
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 7rem;
+    height: 5rem;
+}
+.functionGetCoinContent{
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    width: 7rem;
+    height: 2rem;
+    margin-bottom: 0.5rem;
+}
+.functionGetCoinImg{
+    position: relative;
+
+    width: 2rem;
+    height: 2rem;
+}
+.functionGetCoinValue{
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    width: 2rem;
+    height: 2rem;
+
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.startBtn{
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 15rem;
+    height: 3.3rem;
+
+    border: 0;
+    border-radius: 1rem;
+
+    font-size: 1.2rem;
+    font-weight: normal;
+
+    color: white;
+    background-color: #FFC573;
+    cursor: pointer;
+}
+
+/*------------------ navi footer CSS ------------------*/
+.drag_bar{
+    width: 20%;
+    height: 0.4rem;
+
+    margin: 1rem auto;
+
+    border-radius: 1rem;
+    
+
+    background-color: #ccc;
+}
+
+.navi_footer{
+    position: fixed;
+    bottom: 0; left: 0; z-index: 9970;
+
+    width: 100vw;
+    height: 25vh;
+
+    background-color: rgba(255, 255, 255, 0.4);
+    
+ 
+}
+.navi_footer_content{
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 100vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navi_tools_btns{
+    padding: 0 2rem;
+}
+.navi_tools_btns_item{
+    width: 13rem;
+    height: 4rem;
+
+    border-radius: 1rem;
+
+    font-size: 1.2rem;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navi_terminate_btn{
+    background-color: red;
+    margin-bottom: 1rem;
+}
+.navi_marking_btn{
+    background-color: #FFC573;
+    margin-top: 1rem;
+}
+.arrive_btn{
+    width: 10rem;
+    height: 10rem;
+
+    margin-left: 1rem;
+
+    border: 2px solid #FFC573;
+    border-radius: 1rem;
+
+    background-color: white;
+
+    color: #FFC573;
+    font-size: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

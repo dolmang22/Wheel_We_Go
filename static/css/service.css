@@ -1,0 +1,268 @@
+body,
+html {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+div {
+    box-sizing: border-box;
+}
+
+
+a,
+a:visited,
+a:active {
+    color: inherit;
+    /* 상속된 색상 사용 */
+    text-decoration: none;
+    /* 밑줄 제거 */
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 9999;
+    opacity: 1;
+    transition: 0.5s ease;
+}
+
+.loader i {
+    font-size: 80px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -40px 0 0 -40px;
+    color: #fff;
+}
+
+.loader_text {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+}
+
+#map_div{
+    position: fixed;
+    top: 0; left: 0; z-index: 9970;
+}
+
+.container {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 500px; */
+    width: 100vw;
+    z-index: 9990;
+    text-align: center;
+}
+
+.inform {
+    position: absolute;
+    top: 15vh;
+
+    width: 40vw;
+    height: 15vh;
+
+    background-color: #FFFFFF;
+    
+    border-radius: 16px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.text {
+    font-size: 1rem;
+    font-weight: 900;
+}
+
+.data-count {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dc0,
+.dc2 {
+    font-size: 1rem;
+    color: #000000;
+}
+
+.dc1 {
+    font-size: 1rem;
+    font-weight: 900;
+    color: #FF5733;
+}
+
+.data-count div {
+    margin-right: 5px;
+    /* 원하는 간격 설정 */
+    /* >>>>>>> main:css/service.css */
+}
+
+.km {
+    display: flex;
+    font-size: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.km div {
+    margin-right: 5px;
+    /* 원하는 간격 설정 */
+    /* >>>>>>> main:css/service.css */
+}
+
+.unactive {
+    display: none !important;
+}
+
+.sideBarBtn {
+    position: fixed;
+    right: 2rem; top: 2rem; z-index: 9980;
+
+    width: 3rem;
+    height: 3rem;
+
+    background-color: white;
+
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 1.5rem;
+}
+
+.sideBar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 9999;
+    width: 100vw;
+    height: 100vh;
+
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.sideBar_content {
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    height: 100vh;
+    width: 50vw;
+
+    padding: 1rem;
+
+    background-color: white;
+}
+
+.sideBar_profile {
+    display: flex;
+    align-items: center;
+
+    padding: 1rem 0.5rem;
+
+    border-bottom: 1px solid #A7A7A7;
+}
+
+.sideBar_cancle {
+    display: flex;
+    justify-content: flex-end;
+
+    font-size: 2rem;
+}
+
+.profile_img {
+    width: 4rem;
+    height: 4rem;
+
+    margin-right: 0.5rem;
+}
+
+.sideBarItems {
+    margin-top: 0.5rem;
+}
+
+.sideBar_item {
+    padding: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.searchBar{
+    display: flex;
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 5rem;
+    width: 60vw;
+
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+    z-index: 9990;
+    text-align: center;
+    
+}
+/* input{
+    margin: 0;
+} */
+
+
+.searchText{
+    width: 85%;
+    height: 100%;
+    border: none;
+    font-size: 1rem;
+    padding-left: 2rem;
+    display: inline;
+    outline: none;
+    box-sizing: border-box;
+    color: black;
+    margin: 0;
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+}
+
+.searchBtn{
+    width: 15%;
+    height: 100%;
+    background-color: white;
+    border: none;
+    font-size: 1rem;
+    color: blue;
+    outline: none;
+    display: inline;
+    margin-left: -10px;
+    box-sizing: border-box;
+    margin: 0;
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+}
+.searchBtn img{
+    width: 1.5rem;
+    height: 1rem;
+}
+/* .searchBtn:hover{
+    background-color: lightgrey;
+} */
+

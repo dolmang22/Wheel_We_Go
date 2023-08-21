@@ -1,0 +1,109 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=640, user-scalable=yes">
+    <title>Document</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'img/favicon.png' %}">
+    
+    <!-- Loading window CDN -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    
+    <!-- font awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script
+        src="https://apis.openapi.sk.com/tmap/vectorjs?version=1&appKey=l7xxed2c734830ae4364975ef11e67a76e81"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="{% static 'css/service.css' %}">
+
+    <script src="{% static 'js/service.js' %}" defer></script>
+</head>
+
+<body>
+    
+    <div class="loader">
+        <div id="user-info" data-username="{{ user }}" ></div>
+
+        <i class='bx bx-loader bx-spin'></i>
+        <div class="loader_text">현재 위치 좌표 불러오는 중 ...</div>
+    </div>
+      
+
+    <div id="wrap">
+        <!--햄버거버튼 시작-->
+        <div class="sideBarBtn">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <div class="sideBar unactive">
+            <div class="sideBar_content">
+
+                <div class="sideBar_cancle">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+
+                <div class="sideBar_profile">
+                    <div class="profile_image">
+                        <img class="profile_img" src="{% static 'img/프로필.png' %}" alt="프로필">
+                    </div>
+
+                    <div class="profile_text">
+                        <div class="sideBar_profile_text">어디든 자유롭게 가봐요.</div>
+
+                        <div class="sideBar_profile_content">
+                            {% if user %}
+                            <span style="font-size: 1.5rem; font-weight: 900;">{{ user.username}}</span>
+                            <span>님</span>
+                            {% else %}
+                            <p>지나가는 멋쟁이 호랑이 님</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sideBarItems">
+                    <div class="sideBar_item"><a class="hmwa" href="{% url 'main' %}">홈</a></div>
+                    <div class="sideBar_item"><a class="hmwa" href="{% url 'mypage' %}">마이페이지</a></div>
+                    <div class="sideBar_item"><a class="hmwa" href="{% url 'serviceRegion' %}">서비스 지역 보기</a></div>
+                </div>
+            </div>
+        </div>
+
+        <!--햄버거 끝-->
+        <div class="container">
+            <div class="inform">
+                <div class="text" id="closestName"></div>
+                <div class="data-count">
+                    <div class="dc0">데이터 개수</div>
+                    <div class="dc1" id="stacksNum"></div>
+                    <div class="dc2">개</div>
+                </div>
+                <br />
+                <div class="km">
+                    <div>총</div>
+                    <div id="kmsData"></div>
+                    <div>km</div>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="map_div"></div>
+        <p id="result" style="z-index:10"></p>
+        <div class="searchBar">
+            <input type="text" class="searchText" id="searchInput" placeholder="장소, 주소 입력">
+            <button type="button" id="searchBtn" class="searchBtn">
+                <img src="/static/img/돋보기.png" alt="Search">
+            </button>
+        </div>
+    </div>
+</body>
+
+</html>

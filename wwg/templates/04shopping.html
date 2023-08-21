@@ -1,0 +1,109 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wheel_We_Go.쇼핑페이지</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'img/favicon.png' %}">
+    <link rel="stylesheet" href="{% static 'css/shopping.css' %}">
+    <script src="{% static 'js/shopping.js' %}" defer></script>
+</head>
+
+<body>
+    <div id="wrap">
+        <div>
+            <a href="javascript:history.back()" class="back-button">
+                &lt; 쇼핑
+            </a>
+        </div>
+
+        <div class="slider-container">
+            <div class="slider">
+                <div class="slide"><img src="/static/img/박카스 D.jpg" alt="박카스 D.jpg"></div>
+                <div class="slide"><img src="/static/img/클룹.jpeg" alt="클룹.jpeg"></div>
+                <div class="slide"><img src="/static/img/박카스D_01.jpg" alt="박카스D_01.jpg"></div>
+                <div class="slide"><img src="/static/img/클룹제로소다.jpg" alt="클룹제로소다.jpg"></div>
+            </div>
+        </div>
+
+        <div class="product-container">
+            <div class="product-list">
+                <div class="product-list-title">상품목록</div>
+                <div class="bar"></div>
+            </div>
+
+            <div class="all-product">
+                <div class="product">
+                    <div class="img-product">
+                        <img src="/static/img/박카스_상품.jpeg" alt="박카스_상품.jpeg">
+                        <div class="product-name">
+                            <div>박카스D</div>
+                            <img src="{% static 'img/장바구니.png' %}" alt="장바구니">
+                        </div>
+                        <div class="price">가격</div>
+                    </div>
+                </div>
+                <div class="product">
+                    <div class="img-product">
+                        <img src="/static/img/클룹제로소다_상품.jpeg" alt="클룹제로소다_상품.jpeg">
+                        <div class="product-name">
+                            <div>클룹제로소다</div>
+                            <img src="{% static 'img/장바구니.png' %}" alt="장바구니">
+                        </div>
+                        <div class="price">가격</div>
+                    </div>
+                </div>
+                <div class="product">
+                    <div class="img-product">
+                        <img src="/static/img/오뚜기라면_상품.webp" alt="오뚜기라면_상품.webp">
+                        <div class="product-name">
+                            <div>오뚜기라면모음</div>
+                            <img src="{% static 'img/장바구니.png' %}" alt="장바구니">
+                        </div>
+                        <div class="price">가격</div>
+                    </div>
+                </div>
+                <div class="product">
+                    <div class="img-product">
+                        <img src="/static/img/오뚜기누룽지_상품.webp" alt="오뚜기누룽지_상품.webp">
+                        <div class="product-name">
+                            <div>누룽지</div>
+                            <img src="{% static 'img/장바구니.png' %}" alt="장바구니">
+                        </div>
+                        <div class="price">가격</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="company-container">
+            <div class="company-list">
+                <div>입점기업</div>
+                <div class="bar"></div>
+            </div>
+            <div class="all-company">
+                <div class="company">
+                    <img src="/static/img/동아제약_로고-removebg-preview.png" alt="동아제약_로고-removebg-preview.png">
+                    <div>동아제약</div>
+                </div>
+                <div class="company">
+                    <img src="/static/img/클룹_로고.svg" alt="">
+                    <div>클룹CLOOP</div>
+                </div>
+                <div class="company">
+                    <img src="/static/img/오뚜기_로고-removebg-preview.png" alt="오뚜기_로고-removebg-preview.png">
+                    <div>오뚜기</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ad-container">
+            <img src="{% static 'img/KONKRIT.png' %}" alt="KONKRIT광고">
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>

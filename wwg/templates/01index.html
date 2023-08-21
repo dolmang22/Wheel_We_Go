@@ -1,0 +1,32 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wheel_We_Go.로그인페이지</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'img/favicon.png' %}">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}" type="text/css">
+
+</head>
+
+<body>
+    <div id="wrap">
+
+        <div class="container">
+            <div class="logo-container">
+                <img src="{% static 'img/로고.png' %}" alt="Wheel We Go" class="logo">
+            </div>
+
+            {% load socialaccount %}
+
+            <button type="button" class="login-button" onclick="location.href = '{% provider_login_url 'kakao' %}'">
+                <img src="{% static 'img/카카오톡로고.png' %}" alt="Kakao Logo" class="kakao-logo">
+                카카오계정으로 로그인
+            </button>
+        </div>
+    </div>
+</body>
+
+</html>
